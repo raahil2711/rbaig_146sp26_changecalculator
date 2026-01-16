@@ -37,7 +37,7 @@ public class ChangeCalculatorApp {
             
             /* calculate the number of (whole) quarters */
             int quarters = cents / 25;  // get number of WHOLE quarters
-            cents %= 25  // assign the REMAINDER as new value of cents that REMAIN
+            cents %= 25;  // assign the REMAINDER as new value of cents that REMAIN
                          // cents %= 25; --> cents = cents % 25;
 
             /* 
@@ -53,25 +53,28 @@ public class ChangeCalculatorApp {
              * (and then the number of pennies will simply be equal to
              *  the number of cents that remain)
              */
-              // get number of WHOLE nickels
-              // get number of pennies
+            int nickels = cents / 5;  // get number of WHOLE nickels
+            int pennies = cents % 5;  // get number of pennies
 
               
-            /* ... PHASE (for current loop iteration) */
+            /* TERMINATION PHASE (for current loop iteration) */
             
             /*
              * display the results using **formatted printing**
              * (Watch spacing inside your format strings, and 
              *  don't forget to include the newline character!)
              */
-             
+            System.out.printf("Quarters: %d%n", quarters);
+            System.out.printf("Dimes: %4d%n", dimes);        // `%4d` means 4 spaces before number of dimes. To align all numbers below and above it in one column (aesthetics).
+            System.out.printf("Nickels: %2d%n", nickels);    // `%2d` means 2 spaces before number of nickels.
+            System.out.printf("Pennies: %2d%n", pennies);    // `%2d` means 2 spaces before number of pennies.
             
             System.out.println(); // blank line for readability
 
             // see if the user wants to continue
             System.out.print("Continue? (y/n): ");
-              // get user input
-              // discard rest of line
+            choice = sc.next();  // get user input
+            sc.nextLine();  // discard rest of line ("clears input buffer")
               
             System.out.println(); // blank line for readability
             
